@@ -1,5 +1,5 @@
 const request = require('supertest');
-const app = require('../app'); // Make sure app.js exports the app
+const app = require('../app');
 
 describe('GET /', function () {
   it('responds with Hello, GitHub Actions!', function (done) {
@@ -9,3 +9,4 @@ describe('GET /', function () {
       .expect('Hello, GitHub Actions!', done);
   });
 });
+
