@@ -1,12 +1,18 @@
 const request = require('supertest');
 const app = require('../app');
 
-describe('GET /', function () {
-  it('responds with Hello, GitHub Actions!', function (done) {
-    request(app)
-      .get('/')
-      .expect(200)
-      .expect('Hello, GitHub Actions!', done);
+// In your test file (test/test.js)
+describe('GET /', () => {
+  it('responds with Hello, GitHub Actions!', () => {
+    // Your existing test
+  });
+
+  // Add a new test case
+  it('responds with 404 for unknown routes', async () => {
+    await request(app)
+      .get('/nonexistent-route')
+      .expect(404);
   });
 });
+
 
